@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Attendance Tracker</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Student Attendance Tracker</h1>
+		<form method="post" action="attendance.php">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Student Name</th>
+						<th>Morning Attendance Status</th>
+						<th>Afternoon Attendance Status</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					$students = array(
+						"John Smith",
+						"Jane Doe",
+						"Bob Johnson"
+					);
+
+					// Loop through the students array and create a row for each student
+					foreach ($students as $student) {
+						echo "<tr>";
+						echo "<td>" . $student . "</td>";
+						echo "<td><select class='attendance-select' onchange='calculateAttendance()'><option value='1'>Present</option><option value='0'>Absent</option></select></td>";
+						echo "<td><select class='attendance-select' onchange='calculateAttendance()'><option value='1'>Present</option><option value='0'>Absent</option></select></td>";
+						echo "<td class='date-col'>" . date('m/d/Y') . "</td>";
+						echo "</tr>";
+					}
+					?>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3" style="text-align: right;">Attendance Percentage: <span id="attendancePercentage"></span>%</td>
+					</tr>
+					<tr>
+						<td colspan="3" style="text-align: right;"><button type="submit" name="submit" class="btn btn-primary">Submit</button></td>
+					</tr>
+				</tfoot>
+			</table>
+		</form>
+	</div>
+
+	<script>
+		// Calculate the attendance percentage and display it in the footer
+		function calculateAttendance() {
+			var attendanceSelects = document.getElementsByClassName("attendance-select");
+			var totalAttendance = 0;
+
+			for (var i = 0; i < attendanceSelects.length; i++) {
+				totalAttendance += parseInt(attendanceSelects[i].value);
+			}
+
+			var attendancePercentage = (totalAttendance / (attendanceSelects.length * 2)) * 100;
+
+			document.getElementById("attendancePercentage").innerHTML = attendancePercentage.toFixed(2);
+		}
+	</script>
+</body>
+</html>
