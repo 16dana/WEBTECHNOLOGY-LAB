@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Submit Button Event</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1491466424936-e304919aada7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80');
+}
+
+    
+  </style>
+</head>
+<body>
+  <br><br>
+  <h1 style="text-align:center" style="text-decoration-color: white;">Welcome To Kec Attendance Manager</h1>
+  <div class="container-fluid">
+    <div class="row justify-content-center mt-5">
+      <div class="col-sm-6 col-md-4">
+        <div class="card">
+          <div class="card-header">
+            Login
+          </div>
+          <div class="card-body">
+            <form id="loginForm" action="nextpage.html">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#loginForm').on('submit', function(event) {
+        event.preventDefault();
+  
+  // Get the URL of the destination web page
+  
+        const destinationURL = 'record.html';
+    
+   
+  
+  // Navigate to the destination web page
+    window.location.href = destinationURL;
+
+      });
+    });
+  </script>
+</body>
+</html>
