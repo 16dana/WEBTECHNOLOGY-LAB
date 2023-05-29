@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Attendance Tracker</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<br>
+	<h1 style="text-align:center;">Student Attendance Marker</h1>
+	<br>
+	<br>
+	<br>
+	<div class="container">
+		<form id="myForm" action="/record" method="post">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Student Name</th>
+						<th>Morning Attendance Status</th>
+						<th>Afternoon Attendance Status</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>John Smith</td>
+						<td>
+							<select id="johnAttendance" name="johnAttendance" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td>
+							<select id="johnAttendance1" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td id="johnDate"></td>
+					</tr>
+					<tr>
+						<td>Jane Doe</td>
+						<td>
+							<select id="janeAttendance" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td>
+							<select id="janeAttendance1" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td id="janeDate"></td>
+					</tr>
+					<tr>
+						<td>Bob Johnson</td>
+						<td>
+							<select id="bobAttendance" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td>
+							<select id="bobAttendance1" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td id="bobDate"></td>
+					</tr>
+					<tr>
+						<td>Ram</td>
+						<td>
+							<select id="bobAttendance" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td>
+							<select id="bobAttendance1" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td id="f"></td>
+					</tr>
+					<tr>
+						<td>Narmatha</td>
+						<td>
+							<select id="bobAttendance" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td>
+							<select id="bobAttendance1" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td id="e"></td>
+					</tr>
+					<tr>
+						<td>Steve jobs</td>
+						<td>
+							<select id="bobAttendance" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td>
+							<select id="bobAttendance1" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td id="d"></td>
+					</tr>
+					<tr>
+						<td>Hussy</td>
+						<td>
+							<select id="bobAttendance" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td>
+							<select id="bobAttendance1" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td id="c"></td>
+					</tr>
+					<tr>
+						<td>Rock</td>
+						<td>
+							<select id="bobAttendance" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td>
+							<select id="bobAttendance1" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td id="b"></td>
+					</tr>
+					<tr>
+						<td>Seetha</td>
+						<td>
+							<select id="bobAttendance" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td>
+							<select id="bobAttendance1" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td id="g"></td>
+					</tr>
+					<tr>
+						<td>Vikram</td>
+						<td>
+							<select id="bobAttendance" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td>
+							<select id="bobAttendance1" onchange="calculateAttendance()">
+								<option value="1">Present</option>
+								<option value="0">Absent</option>
+							</select>
+						</td>
+						<td id="h"></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3" style="text-align: right;">Attendance Percentage: <span id="attendancePercentage"></span>%</td>
+					</tr>
+					<tr>
+						<td colspan="3" style="text-align: right;"><input type="submit" name="submit" value="Submit" class="btn btn-primary"></td>
+					</tr>
+				</tfoot>
+			</table>
+		</form>
+	</div>
+
+	<script>
+		// Get today's date and display it in each student's row
+		var today = new Date();
+		document.getElementById("johnDate").innerHTML = today.toLocaleDateString();
+		document.getElementById("janeDate").innerHTML = today.toLocaleDateString();
+		document.getElementById("bobDate").innerHTML = today.toLocaleDateString();
+		document.getElementById("b").innerHTML = today.toLocaleDateString();
+		document.getElementById("c").innerHTML = today.toLocaleDateString();
+		document.getElementById("d").innerHTML = today.toLocaleDateString();
+		document.getElementById("e").innerHTML = today.toLocaleDateString();
+		document.getElementById("f").innerHTML = today.toLocaleDateString();
+		document.getElementById("g").innerHTML = today.toLocaleDateString();
+		document.getElementById("h").innerHTML = today.toLocaleDateString();
+
+		// Calculate the attendance percentage and display it in the footer
+		function calculateAttendance() {
+			var totalClasses = 1; // We assume that there is only one class for now
+			var totalAttendance = 0;
+
+			// Loop through each row in the table
+			$("table tbody tr").each(function() {
+				// Get the attendance values for the current row
+				var morningAttendance = $(this).find("select:first").val();
+				var afternoonAttendance = $(this).find("select:last").val();
+
+				// Calculate the total attendance for the current row
+				var rowAttendance = parseInt(morningAttendance) + parseInt(afternoonAttendance);
+				totalAttendance += rowAttendance;
+			});
+
+			// Calculate the overall attendance percentage
+			var attendancePercentage = (totalAttendance / (totalClasses * 10 * 2)) * 100;
+
+			// Display the attendance percentage in the footer
+			document.getElementById("attendancePercentage").innerHTML = attendancePercentage.toFixed(2);
+		}
+	</script>
+</body>
+</html>
